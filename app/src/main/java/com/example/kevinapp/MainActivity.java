@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         objAnim.setRepeatCount(ObjectAnimator.INFINITE);
         objAnim.setRepeatMode(ObjectAnimator.REVERSE);
         objAnim.start();
-    };
+    }
 
     ValueAnimator colorAnim;
     private void startColorAnimation(View v){
@@ -34,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
         colorAnim.setRepeatCount(ObjectAnimator.RESTART);
         colorAnim.setRepeatMode(ObjectAnimator.REVERSE);
         colorAnim.start();
-    };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button buttonYes = (Button) (findViewById(R.id.buttonYes));
-        final Button buttonNo = (Button) (findViewById(R.id.buttonNo));
-        final Button buttonClose = (Button) (findViewById(R.id.buttonClose));
+        final Button buttonYes = (findViewById(R.id.buttonYes));
+        final Button buttonNo = (findViewById(R.id.buttonNo));
+        final Button buttonClose = (findViewById(R.id.buttonClose));
 
-        final TextView textViewQuestion = (TextView) findViewById(R.id.textViewQuestion);
+        final TextView textViewQuestion = findViewById(R.id.textViewQuestion);
 
         startSizeAnimation(findViewById(R.id.buttonYes));
 
