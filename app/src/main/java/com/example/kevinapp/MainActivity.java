@@ -16,10 +16,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     ObjectAnimator objAnim;
-    private void pulseAnimation(){
-        objAnim = ObjectAnimator.ofPropertyValuesHolder(findViewById(R.id.buttonYes),
-                                                        PropertyValuesHolder.ofFloat("scaleX", 1.5f),
-                                                        PropertyValuesHolder.ofFloat("scaleY", 1.5f));
+    private void startSizeAnimation(View v){
+        objAnim = ObjectAnimator.ofPropertyValuesHolder(v,
+                                                        PropertyValuesHolder.ofFloat("scaleX", 1.2f),
+                                                        PropertyValuesHolder.ofFloat("scaleY", 1.2f));
         objAnim.setDuration(300);
         objAnim.setRepeatCount(ObjectAnimator.INFINITE);
         objAnim.setRepeatMode(ObjectAnimator.REVERSE);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView textViewQuestion = (TextView) findViewById(R.id.textViewQuestion);
 
-        this.pulseAnimation();
+        startSizeAnimation(findViewById(R.id.buttonYes));
 
         buttonYes.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonYes.setVisibility(View.INVISIBLE);
                 buttonNo.setVisibility(View.INVISIBLE);
                 buttonClose.setVisibility(View.VISIBLE);
+                startSizeAnimation(findViewById(R.id.buttonClose));
 
             }
         });
